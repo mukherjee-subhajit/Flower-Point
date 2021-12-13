@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log In</title>
+
+<script type="text/javascript">
+function valid() {
+	var pass=document.frm.pass;
+	var phn=document.frm.phn;
+	
+	if(phn.value==""){
+		alert("Please Enter Phone No.");
+		phn.focus();
+		return false;
+	}
+	else if(isNaN(phn.value)){
+		alert("Please Enter Phone No. correctly");
+		phn.focus();
+		return false;
+	}
+	else if(phn.value.length!=10){
+		alert("Phone No. must be 10 digits");
+		phn.focus();
+		return false;
+	}
+	else if(pass.value==""){
+		alert("Please Enter Password");
+		pass.focus();
+		return false;
+	}
+	else if(pass.value.length<6){
+		alert("Password must be at least 6 characters");
+		pass.focus();
+		pass.select();
+		return false;
+	}
+}
+</script>
+<link rel="stylesheet" href="Menu.css"> 
+</head>
+<body>
+
+<!--  ************************************ Start of the Menu ***************************************************  -->
+<div id="menu">
+<table border="0">
+<tr>
+
+<td width="10%" align="center">Flower Point</td>
+
+<td width="50%">
+	<ul class="l">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="aboutUs.html">About Us</a></li>
+	<li><a href="contact.html">Contact</a></li>
+	</ul>
+</td>
+<td width="15%">
+	<ul class="r">
+	<li><a href="signup.html">Sign Up</a></li>
+	<li><a href="login.html">Login</a></li>
+	</ul>
+</td>
+</tr>
+</table>
+
+
+</div>
+<!--   ************************************ End of the Menu ***************************************************  -->
+<br><br><br><br>
+
+
+
+<div align="center">
+
+<h3>Log In to Your Account</h3><br><br>
+	<form name="frm" action="Login" onsubmit="return valid()">
+	<input type="text" name="phn" placeholder="Mobile No." ><br><br>	
+	  <input type="password" name="pass" placeholder="Password" ><br><br>
+	<input type="submit" value="SUBMIT" class="submit"><br><br>
+	New User? <a href="signup.html">Sign Up</a>
+	</form>
+</div>
+
+<!-- <div id="x"></div> -->
+
+</body>
+</html>
